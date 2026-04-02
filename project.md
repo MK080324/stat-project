@@ -1,182 +1,174 @@
-<div style="text-align: center; padding-top: 180px;">
-
-<h1 style="font-size: 26pt; margin-bottom: 5px;">AP Statistics S2 Project</h1>
-
-<h2 style="font-size: 18pt; border: none; font-weight: normal; margin-top: 5px;">AP-Style Question Design & Rubric Creation</h2>
-
-<br/><br/><br/><br/>
-
-<p style="font-size: 14pt;">
-<strong>Student Name:</strong> Mickey Zhang (张嘉敏)<br/>
-<strong>Class Number:</strong> P1<br/>
-<strong>Date:</strong> April 2, 2026
-</p>
-
-<br/><br/><br/><br/><br/><br/><br/><br/>
-
-<p style="font-size: 13pt;">AP Statistics — Semester 2</p>
-
-</div>
-
-<div style="page-break-after: always;"></div>
-
-## Multiple-Choice Questions
-
 ---
+title: ""
+mainfont: "Times New Roman"
+CJKmainfont: "Songti SC"
+fontsize: 12pt
+geometry: margin=1in
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhf{}
+  - \fancyfoot[C]{\thepage}
+  - \renewcommand{\headrulewidth}{0pt}
+  - \usepackage{tikz}
+  - \usepackage{pgfplots}
+  - \pgfplotsset{compat=1.18}
+  - \usepackage{enumerate}
+  - \usepackage{array}
+  - \usepackage{tabularx}
+---
+
+\thispagestyle{empty}
+
+\vspace*{5cm}
+
+\begin{center}
+{\Huge\bfseries AP Statistics S2 Project}
+\end{center}
+
+\vspace{4cm}
+
+\begin{center}
+{\large
+\begin{tabular}{rl}
+\textbf{Student Name:} & Mickey Zhang (张嘉敏) \\[0.5cm]
+\textbf{Class Number:} & P1 \\[0.5cm]
+\textbf{Date:} & April 2, 2026 \\
+\end{tabular}
+}
+\end{center}
+
+\newpage
+
+## Part I: Multiple-Choice Questions
+
+\bigskip
 
 **Question 1**
 
-A city health department collected data on the number of hours of sleep per night for a random sample of 200 adults. The results are summarized in the bar chart below.
+A city health department collected data on the number of hours of sleep per night for a random sample of 200 adults. The results are summarized in the histogram below.
 
-<div style="text-align: center; margin: 20px 0;">
-<strong>Distribution of Nightly Sleep Hours Among 200 Adults</strong>
+\begin{center}
+\textbf{Distribution of Nightly Sleep Hours Among 200 Adults}
+\end{center}
 
-| Hours of Sleep | 3–4 | 4–5 | 5–6 | 6–7 | 7–8 | 8–9 | 9–10 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Frequency** | 5 | 15 | 35 | 60 | 55 | 22 | 8 |
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar interval,
+    width=12cm, height=6.5cm,
+    xlabel={Hours of Sleep per Night},
+    ylabel={Number of Adults},
+    ymin=0, ymax=70,
+    xmin=3, xmax=11,
+    xtick={3,4,5,6,7,8,9,10,11},
+    xticklabel style={anchor=north},
+    ytick={0,10,20,30,40,50,60},
+    axis lines=left,
+    bar width=0.92,
+    every tick label/.style={font=\small},
+    enlarge x limits=0.02,
+]
+\addplot[fill=gray!40, draw=black] coordinates {
+    (3,5) (4,10) (5,18) (6,35) (7,65) (8,42) (9,20) (10,5) (11,0)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-</div>
+Based on the histogram, which of the following statements is correct?
 
-<div style="text-align: center; margin: 15px 0;">
-<svg width="420" height="250" viewBox="0 0 420 250">
-  <!-- Y-axis -->
-  <line x1="50" y1="10" x2="50" y2="210" stroke="black" stroke-width="1.5"/>
-  <!-- X-axis -->
-  <line x1="50" y1="210" x2="410" y2="210" stroke="black" stroke-width="1.5"/>
+\begin{enumerate}[(A)]
+\item The distribution of sleep hours is approximately uniform.
+\item The median number of hours of sleep is between 8 and 9 hours.
+\item The distribution is skewed to the left, so the mean is likely less than the median.
+\item The distribution is skewed to the right, so the mean is likely greater than the median.
+\item The distribution is approximately symmetric, so the mean and median are approximately equal.
+\end{enumerate}
 
-  <!-- Y-axis labels -->
-  <text x="45" y="210" text-anchor="end" font-size="10">0</text>
-  <text x="45" y="180" text-anchor="end" font-size="10">10</text>
-  <text x="45" y="150" text-anchor="end" font-size="10">20</text>
-  <text x="45" y="120" text-anchor="end" font-size="10">30</text>
-  <text x="45" y="90" text-anchor="end" font-size="10">40</text>
-  <text x="45" y="60" text-anchor="end" font-size="10">50</text>
-  <text x="45" y="30" text-anchor="end" font-size="10">60</text>
+\medskip
 
-  <!-- Y-axis gridlines -->
-  <line x1="50" y1="180" x2="410" y2="180" stroke="#ddd" stroke-width="0.5"/>
-  <line x1="50" y1="150" x2="410" y2="150" stroke="#ddd" stroke-width="0.5"/>
-  <line x1="50" y1="120" x2="410" y2="120" stroke="#ddd" stroke-width="0.5"/>
-  <line x1="50" y1="90" x2="410" y2="90" stroke="#ddd" stroke-width="0.5"/>
-  <line x1="50" y1="60" x2="410" y2="60" stroke="#ddd" stroke-width="0.5"/>
-  <line x1="50" y1="30" x2="410" y2="30" stroke="#ddd" stroke-width="0.5"/>
+**Correct Answer: (C)**
 
-  <!-- Bars: each bar width=45, gap=5 -->
-  <!-- 3-4: freq=5, height=5*3=15 -->
-  <rect x="55" y="195" width="45" height="15" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 4-5: freq=15, height=45 -->
-  <rect x="105" y="165" width="45" height="45" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 5-6: freq=35, height=105 -->
-  <rect x="155" y="105" width="45" height="105" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 6-7: freq=60, height=180 -->
-  <rect x="205" y="30" width="45" height="180" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 7-8: freq=55, height=165 -->
-  <rect x="255" y="45" width="45" height="165" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 8-9: freq=22, height=66 -->
-  <rect x="305" y="144" width="45" height="66" fill="#808080" stroke="black" stroke-width="0.5"/>
-  <!-- 9-10: freq=8, height=24 -->
-  <rect x="355" y="186" width="45" height="24" fill="#808080" stroke="black" stroke-width="0.5"/>
+**Explanation:** The histogram shows that the bulk of the data is concentrated at the higher values (6--8 hours), with the peak at the 7--8 hour interval, and a longer tail stretching toward the lower values (left). In a left-skewed distribution, the mean is pulled toward the left tail and is therefore less than the median. The 100th and 101st values (determining the median) fall in the 7--8 hour interval, not the 8--9 interval, so choice (B) is incorrect.
 
-  <!-- X-axis labels -->
-  <text x="77" y="225" text-anchor="middle" font-size="10">3–4</text>
-  <text x="127" y="225" text-anchor="middle" font-size="10">4–5</text>
-  <text x="177" y="225" text-anchor="middle" font-size="10">5–6</text>
-  <text x="227" y="225" text-anchor="middle" font-size="10">6–7</text>
-  <text x="277" y="225" text-anchor="middle" font-size="10">7–8</text>
-  <text x="327" y="225" text-anchor="middle" font-size="10">8–9</text>
-  <text x="377" y="225" text-anchor="middle" font-size="10">9–10</text>
-
-  <!-- Axis titles -->
-  <text x="230" y="245" text-anchor="middle" font-size="11">Hours of Sleep</text>
-  <text x="15" y="110" text-anchor="middle" font-size="11" transform="rotate(-90, 15, 110)">Frequency</text>
-</svg>
-</div>
-
-Based on the histogram, which of the following statements is true?
-
-(A) The distribution of sleep hours is approximately uniform.
-
-(B) The median number of hours of sleep is between 7 and 8 hours.
-
-(C) The distribution is skewed to the left, so the mean is likely less than the median.
-
-(D) The distribution is skewed to the right, so the mean is likely greater than the median.
-
-(E) The distribution is approximately symmetric, so the mean and median are approximately equal.
-
-**Answer: (C)**
-
-**Explanation:** The histogram shows that the distribution peaks around 6–7 hours and has a longer tail stretching toward the lower values (left). In a left-skewed distribution, the mean is pulled toward the tail and is therefore less than the median.
-
----
-
-<div style="page-break-after: always;"></div>
+\newpage
 
 **Question 2**
 
-A pharmaceutical company claims that a new medication reduces systolic blood pressure by an average of 12 mmHg. A researcher selects a random sample of 45 patients who take the medication and finds that the mean reduction in systolic blood pressure is $\bar{x} = 10.3$ mmHg with a sample standard deviation of $s = 5.8$ mmHg. Assuming the conditions for inference are met, what is the value of the test statistic for testing $H_0: \mu = 12$ versus $H_a: \mu \neq 12$?
+A pharmaceutical company claims that a new medication reduces systolic blood pressure by an average of 10 mmHg. A researcher selects a random sample of 36 patients who take the medication and records the reduction in systolic blood pressure for each patient. The sample yields a mean reduction of $\bar{x} = 8.2$ mmHg with a sample standard deviation of $s = 4.8$ mmHg.
 
-(A) $t = -1.966$
+The researcher wants to test whether the true mean reduction is less than the company's claim. Assuming the conditions for inference are met, what is the $p$-value for the appropriate hypothesis test?
 
-(B) $t = -1.280$
+\begin{enumerate}[(A)]
+\item $0.0077$
+\item $0.0154$
+\item $0.0308$
+\item $0.4846$
+\item $0.9846$
+\end{enumerate}
 
-(C) $t = -0.293$
+\medskip
 
-(D) $t = 0.293$
+**Correct Answer: (B)**
 
-(E) $t = 1.966$
+**Explanation:** The hypotheses are $H_0\colon \mu = 10$ versus $H_a\colon \mu < 10$. The test statistic is:
 
-**Answer: (A)**
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{8.2 - 10}{4.8 / \sqrt{36}} = \frac{-1.8}{0.8} = -2.25$$
 
-**Explanation:** The test statistic is calculated as:
+Using a $t$-distribution with $df = 36 - 1 = 35$ and a calculator:
 
-$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{10.3 - 12}{5.8 / \sqrt{45}} = \frac{-1.7}{0.8647} \approx -1.966$$
+$$p\text{-value} = P(t_{35} < -2.25) \approx 0.0154$$
 
-A calculator is needed to evaluate $\sqrt{45} \approx 6.708$ and the resulting division.
+This is a one-sided (left-tailed) test, so we do not double the $p$-value. Choice (C) would represent the two-sided $p$-value, and choice (A) is too small.
 
----
+\newpage
 
 **Question 3**
 
-A local coffee shop wants to estimate the proportion of customers who prefer iced coffee over hot coffee. The manager surveys every 5th customer who enters the shop on a Saturday, collecting responses from 80 customers. Of those surveyed, 52 said they prefer iced coffee. The manager wants to construct a 95% confidence interval for the true proportion of all customers who prefer iced coffee. Which of the following is a reason why the conditions for constructing a one-sample $z$-interval for a proportion may NOT be met?
+A researcher is designing a study to investigate whether a new tutoring program improves students' math test scores. The researcher has 60 student volunteers from a school. Which of the following describes an appropriate method for assigning treatments in a completely randomized design?
 
-(A) The sample size is too small for the Normal approximation to apply.
+\begin{enumerate}[(A)]
+\item Allow each student to choose whether they want to participate in the tutoring program or study independently.
+\item Assign the 30 students with the lowest pretest scores to the tutoring program and the remaining 30 students to the control group.
+\item Write each student's name on a slip of paper, place the slips in a hat, draw 30 names for the tutoring program, and assign the remaining 30 students to the control group.
+\item Assign all students in one class period to the tutoring program and all students in a different class period to the control group.
+\item Pair students by pretest score, then within each pair, flip a coin to determine which student receives the tutoring program.
+\end{enumerate}
 
-(B) The number of successes $np$ is less than 10.
+\medskip
 
-(C) The number of failures $n(1-p)$ is less than 10.
+**Correct Answer: (C)**
 
-(D) The sampling method may not produce a representative sample of all customers.
+**Explanation:** A completely randomized design requires that subjects be assigned to treatment groups using a chance process so that each subject has an equal probability of being placed in either group. Choice (C) describes random assignment by drawing names from a hat. Choice (A) is self-selection (no randomization). Choice (B) assigns based on pretest scores (systematic, not random). Choice (D) assigns by class period (not random and may introduce confounding). Choice (E) describes a randomized block (matched pairs) design, which is a valid experimental design but is not a \emph{completely randomized} design.
 
-(E) The population size is not at least 10 times the sample size.
+\newpage
 
-**Answer: (D)**
+## Part II: Free Response Question
 
-**Explanation:** The manager only surveyed customers on a Saturday, and only every 5th customer. Saturday customers may not be representative of all customers (e.g., weekend customers may have different preferences than weekday customers). This is a systematic sample from a single day, which raises concerns about whether the sample is representative of the entire population of customers. The Large Counts condition is met since $80 \times 0.65 = 52 \geq 10$ and $80 \times 0.35 = 28 \geq 10$.
+**Topic: Statistical Inference**
 
-<div style="page-break-after: always;"></div>
-
-## Free Response Question
-
----
-
-**Question 4**
+\bigskip
 
 A regional transit authority wants to evaluate whether a new express bus route has reduced the average commute time for riders traveling from the suburbs to the city center. Before the express route was introduced, the average commute time on the standard route was 47 minutes.
 
 After the express route has been operating for three months, the transit authority selects a random sample of 36 riders who regularly use the new express route. The sample yields a mean commute time of $\bar{x} = 43.2$ minutes with a standard deviation of $s = 9.6$ minutes.
 
-**(a)** Construct and interpret a 95% confidence interval for the mean commute time for all riders who use the new express bus route. Show all work.
+\bigskip
+
+**(a)** Construct and interpret a 95 percent confidence interval for the mean commute time for all riders who use the new express bus route. Show all work.
+
+\bigskip
 
 **(b)** Based on the confidence interval from part (a), is there convincing evidence that the new express route has reduced the mean commute time below 47 minutes? Explain your reasoning.
 
-<div style="page-break-after: always;"></div>
+\newpage
 
-## Free Response Question — Solution
+## Free Response Question --- Solution
 
----
+**Part (a): Construct and interpret a 95% confidence interval for the mean commute time.**
 
-### Part (a): Construct and interpret a 95% confidence interval for the mean commute time.
+\medskip
 
 **Step 1: Identify the parameter and procedure.**
 
@@ -184,9 +176,11 @@ Let $\mu$ be the true mean commute time (in minutes) for all riders who use the 
 
 **Step 2: Check conditions.**
 
-- **Random:** The problem states that a random sample of 36 riders was selected. ✓
-- **10% Condition:** It is reasonable to assume that 36 riders is less than 10% of all riders who use the express route. ✓
-- **Normal/Large Sample:** The sample size is $n = 36 \geq 30$, so by the Central Limit Theorem, the sampling distribution of $\bar{x}$ is approximately normal. ✓
+\begin{itemize}
+\item \textbf{Random:} The problem states that a random sample of 36 riders was selected. $\checkmark$
+\item \textbf{10\% Condition:} It is reasonable to assume that 36 riders is less than 10\% of all riders who use the express route. $\checkmark$
+\item \textbf{Normal/Large Sample:} The sample size is $n = 36 \geq 30$, so by the Central Limit Theorem, the sampling distribution of $\bar{x}$ is approximately normal. $\checkmark$
+\end{itemize}
 
 **Step 3: Calculate the confidence interval.**
 
@@ -204,84 +198,111 @@ $$\boxed{(39.952,\ 46.448)}$$
 
 We are 95% confident that the true mean commute time for all riders who use the new express bus route is between 39.952 minutes and 46.448 minutes.
 
----
+\bigskip
+\hrule
+\bigskip
 
-### Part (b): Is there convincing evidence that the express route has reduced the mean commute time below 47 minutes?
+**Part (b): Is there convincing evidence that the express route has reduced the mean commute time below 47 minutes?**
 
 Yes. The entire 95% confidence interval $(39.952,\ 46.448)$ lies below 47 minutes. Because 47 is not contained in the interval, there is convincing evidence at the 5% significance level that the true mean commute time for riders using the new express bus route is less than 47 minutes. This suggests that the express route has been effective in reducing commute times compared to the previous average of 47 minutes on the standard route.
 
-<div style="page-break-after: always;"></div>
+\newpage
 
-## Free Response Question — Scoring Guideline
+## Free Response Question --- Scoring Guideline
 
----
+This question is scored in **four sections**. Each section is scored as **essentially correct (E)**, **partially correct (P)**, or **incorrect (I)**.
 
-This question is scored in **five sections**. Each section is scored as **Essentially correct (E)**, **Partially correct (P)**, or **Incorrect (I)**.
+\bigskip
 
-### Part (a): Confidence Interval Construction
+\noindent\textbf{Section 1: Identify the parameter and procedure}
 
----
+\medskip
 
-**Section 1 — Identify: State the parameter and the correct inference procedure.**
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{1cm}|X|}
+\hline
+E & States the parameter as the true mean commute time for all riders who use the express bus route \textbf{and} identifies the procedure as a one-sample $t$-interval. \\
+\hline
+P & States the parameter \textbf{or} identifies the procedure correctly, but not both; or uses $z$-interval instead of $t$-interval. \\
+\hline
+I & Does not state the parameter and does not identify the procedure, or identifies a completely incorrect procedure. \\
+\hline
+\end{tabularx}
 
-| Score | Criteria |
-|:---:|:---|
-| **E** | States the parameter as the true mean commute time for all express route riders AND identifies the procedure as a one-sample $t$-interval. |
-| **P** | States the parameter OR identifies the procedure, but not both. |
-| **I** | Does not state the parameter and does not identify the procedure. |
+\bigskip
 
----
+\noindent\textbf{Section 2: Check conditions for inference}
 
-**Section 2 — Conditions: Verify the conditions for inference.**
+\medskip
 
-| Score | Criteria |
-|:---:|:---|
-| **E** | Checks all three conditions with context: (1) Random — states the sample was randomly selected; (2) 10% condition — 36 is less than 10% of all express route riders; (3) Normal/Large Sample — $n = 36 \geq 30$ (CLT applies). |
-| **P** | Checks at least two of the three conditions correctly. |
-| **I** | Checks fewer than two conditions, or checks conditions without context. |
+\begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{1cm}|X|}
+\hline
+E & Verifies all three conditions with context: (1) Random --- states the sample was randomly selected; (2) 10\% condition --- 36 riders is less than 10\% of all express route riders; (3) Normal/Large Sample --- $n = 36 \geq 30$, so the CLT applies. \\
+\hline
+P & Verifies at least two of the three conditions correctly with context, or verifies all three but with weak justification. \\
+\hline
+I & Verifies fewer than two conditions, or provides incorrect justifications. \\
+\hline
+\end{tabularx}
 
----
+\bigskip
 
-**Section 3 — Calculate: Compute the confidence interval correctly.**
+\noindent\textbf{Section 3: Calculate the confidence interval}
 
-| Score | Criteria |
-|:---:|:---|
-| **E** | Correctly calculates the interval as approximately $(39.952,\ 46.448)$ using correct $t^*$, $\bar{x}$, $s$, and $n$. Shows the formula and substitution. |
-| **P** | Uses the correct formula and process but makes a minor computational error, OR uses $z^*$ instead of $t^*$. |
-| **I** | Uses an incorrect formula, makes a major computational error, or shows no work. |
+\medskip
 
----
+\begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{1cm}|X|}
+\hline
+E & Correctly computes the interval as approximately $(39.952,\ 46.448)$ using correct $t^*$, $\bar{x}$, $s$, and $n$. Shows formula and substitution. Minor arithmetic errors are acceptable if the process is correct. \\
+\hline
+P & Uses the correct formula but makes a computational error, or uses $z^* = 1.96$ instead of $t^*$ but otherwise computes correctly. \\
+\hline
+I & Uses an incorrect formula, makes a major computational error, or shows no work. \\
+\hline
+\end{tabularx}
 
-**Section 4 — Interpret: Interpret the confidence interval in context.**
+\bigskip
 
-| Score | Criteria |
-|:---:|:---|
-| **E** | Provides a correct interpretation that includes: (1) 95% confidence, (2) the interval bounds, and (3) reference to the population mean commute time for express route riders. |
-| **P** | Provides an interpretation that is missing one of the three required components, or contains a minor error in wording. |
-| **I** | Provides no interpretation, or the interpretation is missing two or more components. |
+\noindent\textbf{Section 4: Interpret the interval and draw a conclusion}
 
----
+\medskip
 
-### Part (b): Drawing a Conclusion
+\begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{1cm}|X|}
+\hline
+E & \textbf{Part (a):} Provides a correct interpretation that includes (i) 95\% confidence, (ii) the interval bounds, and (iii) reference to the population mean commute time for all express route riders. \textbf{Part (b):} Correctly concludes there is convincing evidence that $\mu < 47$ \textbf{and} justifies by noting that 47 is not contained in the CI (or the entire interval is below 47). \\
+\hline
+P & Provides a correct interpretation/conclusion for one part but not the other; or addresses both parts but with minor errors (e.g., says ``95\% probability'' or does not reference the population). \\
+\hline
+I & Fails to interpret the interval in context, or draws an incorrect conclusion, or provides no justification linking the CI to the conclusion. \\
+\hline
+\end{tabularx}
 
----
+\bigskip
+\bigskip
 
-**Section 5 — Conclusion: Use the confidence interval to draw a conclusion.**
+\noindent\textbf{Overall Scoring:}
 
-| Score | Criteria |
-|:---:|:---|
-| **E** | Correctly concludes that there is convincing evidence that the mean commute time is less than 47 minutes AND provides a justification that references the confidence interval (e.g., 47 is not in the interval, or the entire interval is below 47). |
-| **P** | Provides a correct conclusion but with an incomplete or weak justification, OR provides a strong justification but the conclusion is poorly stated. |
-| **I** | Provides an incorrect conclusion, or provides no justification based on the confidence interval. |
+\medskip
 
----
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Score} & \textbf{Criteria} \\
+\hline
+4 (Complete) & Four sections essentially correct (E). \\
+\hline
+3 (Substantial) & Three E and one P. \\
+\hline
+2 (Developing) & Two E and one or two P; or three E and one I. \\
+\hline
+1 (Minimal) & One E and two P; or other combinations with at least two P. \\
+\hline
+0 (Insufficient) & Does not meet the criteria for a score of 1. \\
+\hline
+\end{tabular}
+\end{center}
 
-### Scoring Summary
+\medskip
 
-| Score | Criteria |
-|:---:|:---|
-| **4 (Complete)** | All five sections are E. |
-| **3 (Substantial)** | Four sections are E, one is P. |
-| **2 (Developing)** | Three sections are E; OR two E and one or two P. |
-| **1 (Minimal)** | Two sections are E; OR one E and two P. |
-| **0 (Insufficient)** | Does not meet the criteria for a score of 1. |
+\noindent\textbf{Note:} If a student's answer in part (b) is consistent with an incorrect interval from part (a), full credit may still be awarded for part (b) if the reasoning is logically sound.
