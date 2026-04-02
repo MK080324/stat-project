@@ -123,10 +123,10 @@ Using a TI-Nspire calculator with $df = 36 - 1 = 35$:
 \smallskip
 \quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ tcdf}
 
-\quad \texttt{Lower Bound: $-1\text{E}99$, \; Upper Bound: $-2.25$, \; df: $35$}
+\quad \texttt{Lower Bound: $-1 \times 10^{99}$, \; Upper Bound: $-2.25$, \; df: $35$}
 \smallskip
 
-$$p\text{-value} = \texttt{tcdf}(-1\text{E}99,\; -2.25,\; 35) \approx 0.0154$$
+$$p\text{-value} = \texttt{tcdf}(-1 \times 10^{99},\; -2.25,\; 35) \approx 0.0154$$
 
 This is a one-sided (left-tailed) test, so we do not double the $p$-value. Choice (C) would represent the two-sided $p$-value, and choice (A) is too small.
 
@@ -201,8 +201,10 @@ With $n = 36$, the degrees of freedom are $df = 35$. To find the critical value 
 \smallskip
 \quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ Inverse t}
 
-\quad \texttt{Area: $0.975$, \; df: $35$} $\;\rightarrow\; t^* \approx 2.030$
+\quad \texttt{Area: $0.975$, \; df: $35$}
 \smallskip
+
+$$t^* = \texttt{invT}(0.975,\; 35) \approx 2.030$$
 
 $$43.2 \pm 2.030 \times \frac{9.6}{\sqrt{36}} = 43.2 \pm 2.030 \times 1.6 = 43.2 \pm 3.248$$
 
@@ -215,8 +217,10 @@ $$\boxed{(39.952,\ 46.448)}$$
 \smallskip
 \quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Confidence Intervals $\rightarrow$ t Interval}
 
-\quad \texttt{$\bar{x}$: 43.2, \; $s$: 9.6, \; $n$: 36, \; C-Level: 0.95} $\;\rightarrow\; (39.952,\; 46.448)$
+\quad \texttt{$\bar{x}$: 43.2, \; $s$: 9.6, \; $n$: 36, \; C-Level: 0.95}
 \smallskip
+
+$$\texttt{tInterval}(43.2,\; 9.6,\; 36,\; 0.95) \;\rightarrow\; (39.952,\; 46.448)$$
 
 **Step 4: Interpret the interval.**
 
