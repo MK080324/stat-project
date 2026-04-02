@@ -92,7 +92,9 @@ Based on the histogram, which of the following statements is correct?
 
 **Correct Answer: (C)**
 
-**Explanation:** The histogram shows that the bulk of the data is concentrated at the higher values (6--8 hours), with the peak at the 7--8 hour interval, and a longer tail stretching toward the lower values (left). In a left-skewed distribution, the mean is pulled toward the left tail and is therefore less than the median. The 100th and 101st values (determining the median) fall in the 7--8 hour interval, not the 8--9 interval, so choice (B) is incorrect.
+**Explanation:** The histogram shows that the bulk of the data is concentrated at the higher values (6--8 hours), with the peak at the 7--8 hour interval, and a longer tail stretching toward the lower values (left). In a left-skewed distribution, the mean is pulled toward the left tail and is therefore less than the median.
+
+For $n = 200$, the median is the average of the 100th and 101st values. Using cumulative frequencies: 3--4: 5, \; 4--5: 15, \; 5--6: 33, \; 6--7: 68, \; 7--8: 133. Since the cumulative count reaches 68 after the 6--7 interval and 133 after the 7--8 interval, the 100th and 101st values both fall in the 7--8 hour interval --- not the 8--9 interval, so choice (B) is incorrect.
 
 \newpage
 
@@ -148,7 +150,7 @@ A researcher is designing a study to investigate whether a new tutoring program 
 
 **Correct Answer: (C)**
 
-**Explanation:** A completely randomized design requires that subjects be assigned to treatment groups using a chance process so that each subject has an equal probability of being placed in either group. Choice (C) describes random assignment by drawing names from a hat. Choice (A) is self-selection (no randomization). Choice (B) assigns based on pretest scores (systematic, not random). Choice (D) assigns by class period (not random and may introduce confounding). Choice (E) describes a randomized block (matched pairs) design, which is a valid experimental design but is not a \emph{completely randomized} design.
+**Explanation:** A completely randomized design requires that subjects be assigned to treatment groups using a chance process so that each subject has an equal probability of being placed in either group. Choice (C) describes random assignment by drawing names from a hat. Choice (A) is self-selection (no randomization). Choice (B) assigns based on pretest scores (systematic, not random). Choice (D) assigns by class period (not random and may introduce confounding). Choice (E) describes a matched pairs design, which is a valid experimental design but is not a \emph{completely randomized} design.
 
 \newpage
 
@@ -192,11 +194,21 @@ Let $\mu$ be the true mean commute time (in minutes) for all riders who use the 
 
 **Step 3: Calculate the confidence interval.**
 
-The formula for a one-sample $t$-interval is:
+Using the TI-Nspire to compute a one-sample $t$-interval directly:
 
-$$\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}$$
+\smallskip
+\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Confidence Intervals $\rightarrow$ t Interval}
 
-With $n = 36$, the degrees of freedom are $df = 35$. To find the critical value $t^*$ for a 95% confidence level, use the TI-Nspire:
+\quad \texttt{$\bar{x}$: 43.2, \; $s$: 9.6, \; $n$: 36, \; C-Level: 0.95}
+\smallskip
+
+$$\texttt{tInterval}(43.2,\; 9.6,\; 36,\; 0.95) \;\rightarrow\; \boxed{(39.952,\; 46.448)}$$
+
+\smallskip
+
+\noindent\textit{Formula verification:} The formula for a one-sample $t$-interval is $\bar{x} \pm t^* \cdot \dfrac{s}{\sqrt{n}}$.
+
+With $df = 35$, the critical value is:
 
 \smallskip
 \quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ Inverse t}
@@ -206,21 +218,7 @@ With $n = 36$, the degrees of freedom are $df = 35$. To find the critical value 
 
 $$t^* = \texttt{invT}(0.975,\; 35) \approx 2.030$$
 
-$$43.2 \pm 2.030 \times \frac{9.6}{\sqrt{36}} = 43.2 \pm 2.030 \times 1.6 = 43.2 \pm 3.248$$
-
-$$\boxed{(39.952,\ 46.448)}$$
-
-\smallskip
-
-\noindent\textit{Calculator verification:} This result can be confirmed directly on the TI-Nspire:
-
-\smallskip
-\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Confidence Intervals $\rightarrow$ t Interval}
-
-\quad \texttt{$\bar{x}$: 43.2, \; $s$: 9.6, \; $n$: 36, \; C-Level: 0.95}
-\smallskip
-
-$$\texttt{tInterval}(43.2,\; 9.6,\; 36,\; 0.95) \;\rightarrow\; (39.952,\; 46.448)$$
+$$43.2 \pm 2.030 \times \frac{9.6}{\sqrt{36}} = 43.2 \pm 2.030 \times 1.6 = 43.2 \pm 3.248 = (39.952,\ 46.448) \;\checkmark$$
 
 **Step 4: Interpret the interval.**
 
@@ -232,7 +230,37 @@ We are 95% confident that the true mean commute time for all riders who use the 
 
 **Part (b): Is there convincing evidence that the express route has reduced the mean commute time below 47 minutes?**
 
-Yes. The entire 95% confidence interval $(39.952,\ 46.448)$ lies below 47 minutes. Because 47 is not contained in the interval, there is convincing evidence at the 5% significance level that the true mean commute time for riders using the new express bus route is less than 47 minutes. This suggests that the express route has been effective in reducing commute times compared to the previous average of 47 minutes on the standard route.
+We perform a one-sample $t$-test.
+
+\medskip
+
+\noindent\textbf{State:} $H_0\colon \mu = 47$ \quad versus \quad $H_a\colon \mu < 47$
+
+where $\mu$ is the true mean commute time for all riders who use the new express bus route. We use a significance level of $\alpha = 0.05$.
+
+\medskip
+
+\noindent\textbf{Plan:} One-sample $t$-test for a mean. The conditions were verified in part (a).
+
+\medskip
+
+\noindent\textbf{Do:}
+
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{43.2 - 47}{9.6 / \sqrt{36}} = \frac{-3.8}{1.6} = -2.375$$
+
+Using the TI-Nspire with $df = 35$:
+
+\smallskip
+\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ tcdf}
+
+\quad \texttt{Lower Bound: $-1 \times 10^{99}$, \; Upper Bound: $-2.375$, \; df: $35$}
+\smallskip
+
+$$p\text{-value} = \texttt{tcdf}(-1 \times 10^{99},\; -2.375,\; 35) \approx 0.0116$$
+
+\medskip
+
+\noindent\textbf{Conclude:} Since $p\text{-value} \approx 0.0116 < \alpha = 0.05$, we reject $H_0$. There is convincing evidence that the true mean commute time for riders using the new express bus route is less than 47 minutes. This suggests that the express route has been effective in reducing commute times compared to the previous average of 47 minutes on the standard route.
 
 \newpage
 
@@ -297,11 +325,11 @@ I & Uses an incorrect formula, makes a major computational error, or shows no wo
 
 \begin{tabularx}{\textwidth}{|>{\bfseries\centering\arraybackslash}p{1cm}|X|}
 \hline
-E & \textbf{Part (a):} Provides a correct interpretation that includes (i) 95\% confidence, (ii) the interval bounds, and (iii) reference to the population mean commute time for all express route riders. \textbf{Part (b):} Correctly concludes there is convincing evidence that $\mu < 47$ \textbf{and} justifies by noting that 47 is not contained in the CI (or the entire interval is below 47). \\
+E & \textbf{Part (a):} Provides a correct interpretation that includes (i) 95\% confidence, (ii) the interval bounds, and (iii) reference to the population mean commute time for all express route riders. \textbf{Part (b):} States correct hypotheses ($H_0\colon \mu = 47$, $H_a\colon \mu < 47$), computes the test statistic and $p$-value correctly, \textbf{and} draws an appropriate conclusion in context with linkage to the $p$-value. \\
 \hline
-P & Provides a correct interpretation/conclusion for one part but not the other; or addresses both parts but with minor errors (e.g., says ``95\% probability'' or does not reference the population). \\
+P & Provides a correct interpretation/conclusion for one part but not the other; or addresses both parts but with minor errors (e.g., says ``95\% probability,'' omits context in the conclusion, or uses a two-sided test instead of one-sided). \\
 \hline
-I & Fails to interpret the interval in context, or draws an incorrect conclusion, or provides no justification linking the CI to the conclusion. \\
+I & Fails to interpret the interval in context, or draws an incorrect conclusion, or provides no justification linking the test result to the conclusion. \\
 \hline
 \end{tabularx}
 
