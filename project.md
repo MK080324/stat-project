@@ -56,18 +56,20 @@ A city health department collected data on the number of hours of sleep per nigh
 \begin{tikzpicture}
 \begin{axis}[
     ybar interval,
-    width=12cm, height=6.5cm,
+    width=12cm, height=7cm,
     xlabel={Hours of Sleep per Night},
     ylabel={Number of Adults},
-    ymin=0, ymax=70,
+    ymin=0, ymax=75,
     xmin=3, xmax=11,
     xtick={3,4,5,6,7,8,9,10,11},
     xticklabel style={anchor=north},
-    ytick={0,10,20,30,40,50,60},
+    ytick={0,10,20,30,40,50,60,70},
     axis lines=left,
     bar width=0.92,
     every tick label/.style={font=\small},
     enlarge x limits=0.02,
+    nodes near coords,
+    every node near coord/.append style={anchor=south, font=\footnotesize},
 ]
 \addplot[fill=gray!40, draw=black] coordinates {
     (3,5) (4,10) (5,18) (6,35) (7,65) (8,42) (9,20) (10,5) (11,0)
@@ -116,9 +118,15 @@ The researcher wants to test whether the true mean reduction is less than the co
 
 $$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{8.2 - 10}{4.8 / \sqrt{36}} = \frac{-1.8}{0.8} = -2.25$$
 
-Using a $t$-distribution with $df = 36 - 1 = 35$ and a calculator:
+Using a TI-Nspire calculator with $df = 36 - 1 = 35$:
 
-$$p\text{-value} = P(t_{35} < -2.25) \approx 0.0154$$
+\smallskip
+\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ tcdf}
+
+\quad \texttt{Lower Bound: $-1\text{E}99$, \; Upper Bound: $-2.25$, \; df: $35$}
+\smallskip
+
+$$p\text{-value} = \texttt{tcdf}(-1\text{E}99,\; -2.25,\; 35) \approx 0.0154$$
 
 This is a one-sided (left-tailed) test, so we do not double the $p$-value. Choice (C) would represent the two-sided $p$-value, and choice (A) is too small.
 
@@ -188,11 +196,27 @@ The formula for a one-sample $t$-interval is:
 
 $$\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}$$
 
-With $n = 36$, the degrees of freedom are $df = 35$. For a 95% confidence level, $t^* = 2.030$ (from the $t$-table with $df = 35$).
+With $n = 36$, the degrees of freedom are $df = 35$. To find the critical value $t^*$ for a 95% confidence level, use the TI-Nspire:
+
+\smallskip
+\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Distributions $\rightarrow$ Inverse t}
+
+\quad \texttt{Area: $0.975$, \; df: $35$} $\;\rightarrow\; t^* \approx 2.030$
+\smallskip
 
 $$43.2 \pm 2.030 \times \frac{9.6}{\sqrt{36}} = 43.2 \pm 2.030 \times 1.6 = 43.2 \pm 3.248$$
 
 $$\boxed{(39.952,\ 46.448)}$$
+
+\smallskip
+
+\noindent\textit{Calculator verification:} This result can be confirmed directly on the TI-Nspire:
+
+\smallskip
+\quad \texttt{Menu $\rightarrow$ Statistics $\rightarrow$ Confidence Intervals $\rightarrow$ t Interval}
+
+\quad \texttt{$\bar{x}$: 43.2, \; $s$: 9.6, \; $n$: 36, \; C-Level: 0.95} $\;\rightarrow\; (39.952,\; 46.448)$
+\smallskip
 
 **Step 4: Interpret the interval.**
 
